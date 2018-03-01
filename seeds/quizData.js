@@ -710,5 +710,124 @@ const quizData = [
         ],
         "correct": "Stannis Baratheon"
     },
+    {
+        "question": <span>What does Ned Stark tell Bran when he beheads a deserter in the pilot episode?</span>, 
+        "answers": [
+            <span>"Our way is the old way"</span>,
+            <span>"All men must die"</span>,
+            <span>"Fear cuts deeper than a sword"</span>,
+            <span>"Winter is coming"</span>,
+        ],
+        "correct": "Our way is the old way"
+    },
+    {
+        "question": <span>Who is the first character to say the phrase "Game of Thrones"?</span>, 
+        "answers": [
+            <span>Tywin Lannister</span>,
+            <span>Cersei Lannister</span>,
+            <span>Tyrion Lannister</span>,
+            <span>Petyr Baelish</span>,
+        ],
+        "correct": "Cersei Lannister"
+    },
+    {
+        "question": <span>Who is Daenerys Targaryen to Jon Snow?</span>, 
+        "answers": [
+            <span>His Aunt</span>,
+            <span>His Woman</span>,
+            <span>All of the above</span>,
+        ],
+        "correct": "All of the above"
+    },
+    {
+        "question": <span>"The Mountain is the nickname for which character?</span>, 
+        "answers": [
+            <span>Gerald Clegane</span>,
+            <span>Oberyn Martell</span>,
+            <span>Sandor Clegane</span>,
+            <span>Gregor Clegane</span>,
+        ],
+        "correct": "Gregor Clegane"
+    },
+    {
+        "question": <span>Who is lord Commander of the Kingsguard at the beginning of Game of Thrones?</span>, 
+        "answers": [
+            <span>Ser Jamie Lannister</span>,
+            <span>Ser Barristan Selmy</span>,
+            <span>Ser Jeor Mormont</span>,
+            <span>Ser Loras Tyrell</span>,
+        ],
+        "correct": "Ser Barristan Selmy"
+    },
+    {
+        "question": <span>Who was Margaery Tyrell's first husband?</span>, 
+        "answers": [
+            <span>Renly Baratheon</span>,
+            <span>Joffrey Baratheon</span>,
+            <span>Stannis Baratheon</span>,
+            <span>Tommen Baratheon</span>,
+        ],
+        "correct": "Renly Baratheon"
+    },
+    {
+        "question": <span>Who is known as "The King Beyond the Wall" </span>, 
+        "answers": [
+            <span>Tormund Giantsbane</span>,
+            <span>Mance Rayder</span>,
+            <span>The Night King</span>,
+            <span>Stannis Baratheon</span>,
+        ],
+        "correct": ""
+    },
+    {
+        "question": <span>How many times has Sansa Stark been married?</span>, 
+        "answers": [
+            <span>Twice</span>,
+            <span>Once</span>,
+            <span>Three times</span>,
+            <span>Four times</span>,
+        ],
+        "correct": "Twice"
+    },
+    {
+        "question": <span>Who was the Mad Kings firstborn son?</span>, 
+        "answers": [
+            <span>Aemon Targaryen</span>,
+            <span>Aegon Targaryen</span>,
+            <span>Rhaegar Targaryen</span>,
+            <span>Viserys Targaryen</span>,
+        ],
+        "correct": "Rhaegar Targaryen"
+    },
+    {
+        "question": <span>Who delivered the fatal blow to the King in the North Robb Stark?</span>, 
+        "answers": [
+            <span>Alliser Thorne</span>,
+            <span>Roose Bolton</span>,
+            <span>Ramsay Bolton</span>,
+            <span>Walder Frey</span>,
+        ],
+        "correct": "Roose Bolton"
+    },
+    {
+        "question": <span>Which city does Samwell Tarly travel to in order to train as a maester?</span>, 
+        "answers": [
+            <span>Sunspear</span>,
+            <span>Highgarden</span>,
+            <span>Gulltown</span>,
+            <span>Oldtown</span>,
+        ],
+        "correct": "Oldtown"
+    },
+    {
+        "question": <span>In which city does Arya Stark train to become a Faceless man?</span>, 
+        "answers": [
+            <span>Meereen</span>,
+            <span>Pentos</span>,
+            <span>Astapor</span>,
+            <span>Braavos</span>,
+        ],
+        "correct": "Braavos"
+    },
 ]
 module.exports = quizData 
