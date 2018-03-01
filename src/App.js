@@ -44,6 +44,7 @@ class App extends Component {
       <div className="App">
         <NavBar handleLogout={this.handleLogout} user={this.state.user} />
         <h1>GoT Quiz</h1>
+        <h4>Valar Morghulis</h4>
         <Switch>
           <Route exact path='/signup' render={(props) => 
             <SignUpForm 
