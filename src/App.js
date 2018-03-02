@@ -63,7 +63,6 @@ class App extends Component {
     }
   }
   /*---------- Lifecycle Methods ----------*/
-
   componentDidMount() {
     let user = userService.getUser();
     this.setState({user});

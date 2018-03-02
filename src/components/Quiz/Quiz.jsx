@@ -9,6 +9,7 @@ const Quiz = (props) => {
                 <div>
                     {q.choices.map((choice, index) => {
                         return (
+                            <h3>
                             <li 
                                 key={index}
                                 onClick={() => {
@@ -18,6 +19,7 @@ const Quiz = (props) => {
                             >
                                 {choice}
                             </li>
+                            </h3>
                         )
                     })}
                 </div>

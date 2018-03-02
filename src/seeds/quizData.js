@@ -445,7 +445,7 @@ Question.create([
         "answer": "The Rains of Castamere "
     },
     {
-        "question": "Which of the following is now a deadly poison?", 
+        "question": "Which of the following is not a deadly poison?", 
         "choices": [
             "Tears of lys",
             "Wolfsbane",
@@ -781,7 +781,7 @@ Question.create([
             "The Night King",
             "Stannis Baratheon",
         ],
-        "answer": ""
+        "answer": "Mance Rayder"
     },
     {
         "question": "How many times has Sansa Stark been married?", 

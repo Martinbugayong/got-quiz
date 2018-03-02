@@ -1,10 +1,11 @@
 import React from 'react';
+import '../LandingPage/LandingPage.css'
 
 const landingPage = () => {
     return(
-        <div>
+        <div className="vm">
             <h1>Valar Morghulis</h1>
-            <p>"This game is Dark and full of spoilers"</p>
+            <p>"This Quiz is Dark and full of spoilers"</p>
         </div>
     )
 }

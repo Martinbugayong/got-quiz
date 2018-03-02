@@ -1,5 +1,6 @@
 * {
-background-color: rgb(123, 144, 115);
+color: rgb(123, 144, 115);
+background-color: rgb(210, 203, 180);
 }
 
 .App {
@@ -26,3 +27,14 @@ background-color: rgb(123, 144, 115);
   to { transform: rotate(360deg); }
 }
 
+li:hover {
+  cursor: pointer;
+  transition: .15s;
+  transform: scale(1.2);
+  color: white;
+}
+
+li {
+  display:flex;
+  justify-content: space-around;
+}
