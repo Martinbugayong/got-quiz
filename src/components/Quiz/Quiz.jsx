@@ -15,5 +15,5 @@ const Quiz = (props) => {
         </div>
     )
 }
-  
+
 export default Quiz;

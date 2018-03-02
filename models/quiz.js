@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const quizSchema = new Schema ({
     question: String,
-    answers: String,
+    choices: [String],
+    answer: String,
 })
 
-module.exports
+module.exports = mongoose.model('Question', quizSchema);
