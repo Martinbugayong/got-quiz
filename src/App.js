@@ -7,16 +7,35 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import Quiz from './components/Quiz/Quiz';
 import LandingPage from './components/LandingPage/LandingPage';
-
+import questions from './questions'
 
 class App extends Component { 
   constructor() {
     super();
     this.state = {
-      user: null
+      user: null,
+      questions: this.shuffle(questions),
+      currentQ: 0
     }
   }
-
+  shuffle = (array) => {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
   handleLogout = () => {
     userService.logout();
     this.setState({user: null});
@@ -34,6 +53,15 @@ class App extends Component {
     });
   }
 
+  onAnswer = (correct) => {
+    if (correct) {
+      this.setState({
+        currentQ: this.state.currentQ +1
+      })
+    } else {
+      alert('Rewatch the Show, you pleb!')
+    }
+  }
   /*---------- Lifecycle Methods ----------*/
 
   componentDidMount() {
@@ -62,6 +90,9 @@ class App extends Component {
             userService.getUser() ?
             <Quiz 
               {...props}
+              onAnswer={this.onAnswer}
+              currentQ={this.state.currentQ}
+              questions={this.state.questions}
               user={this.state.user}
               handleLogout={this.handleLogout}
             />

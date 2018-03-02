@@ -1,17 +1,27 @@
-import React from 'react'; 
-// import Qdata from '../../seeds/quizData';
+import React from 'react';
 
 const Quiz = (props) => {
+    const q = props.questions[props.currentQ];
     return (
         <div>
-            <h1>Question goes right here</h1>
             <div>
-                <li>choice goes here</li>
-                <li>choice goes here</li>
-                <li>choice goes here</li>
-                <li>choice goes here</li>
+                <h1>{q.question}</h1>
+                <div>
+                    {q.choices.map((choice, index) => {
+                        return (
+                            <li 
+                                key={index}
+                                onClick={() => {
+                                    const correct = choice === q.answer
+                                    props.onAnswer(correct)
+                                }}
+                            >
+                                {choice}
+                            </li>
+                        )
+                    })}
+                </div>
             </div>
-            {/* <Qdata /> */}
         </div>
     )
 }
