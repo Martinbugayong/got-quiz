@@ -6,9 +6,6 @@ const Quiz = (props) => {
     return (
         <div className="quiz">
             <div>
-                <h1></h1> 
-            </div>
-            <div>
                 <h1>{q.question}</h1>
                 <div>
                     {q.choices.map((choice, index) => {

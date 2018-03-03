@@ -49,7 +49,6 @@ class LoginForm extends Component {
             <div className="col-sm-12 text-center">
               <button className="btn btn-default">Login</button>&nbsp;&nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
-              <Link to='/quiz'>Login</Link>
             </div>
           </div>
         </form>

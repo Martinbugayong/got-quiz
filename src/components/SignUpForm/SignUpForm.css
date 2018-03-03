@@ -1,0 +1,12 @@
+.SUform {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+.btn-default {
+    font-size: 25px;
+}
