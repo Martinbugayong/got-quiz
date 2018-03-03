@@ -18,41 +18,25 @@ class App extends Component {
       currentQ: 0
     }
   }
-  shuffle = (array) => {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+
   
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-  
-    return array;
-  }
   handleLogout = () => {
     userService.logout();
     this.setState({user: null});
   }
-
+  
   handleSignup = () => {
     this.setState({
       user: userService.getUser()
     });
   }
-
+  
   handleLogin = () => {
     this.setState({
       user: userService.getUser()
     });
   }
-
+  
   onAnswer = (correct) => {
     if (correct) {
       this.setState({
@@ -62,12 +46,24 @@ class App extends Component {
       alert('Rewatch the Show, you pleb!')
     }
   }
+
+  shuffle = (arr) => {
+    var currentIndex = arr.length, tempVal, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      tempVal = arr[currentIndex];
+      arr[currentIndex] = arr[randomIndex];
+      arr[randomIndex] = tempVal;
+    }
+    return arr;
+  }
   /*---------- Lifecycle Methods ----------*/
   componentDidMount() {
     let user = userService.getUser();
     this.setState({user});
   }
-
+  
   render() {
     return (
       <div className="App">

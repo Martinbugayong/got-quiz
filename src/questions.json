@@ -127,7 +127,7 @@
             "Joffrey Baratheon",
             "Perer baelish"
         ],
-        "answer": ""
+        "answer": "The Hound"
     },
     {
         "question": "Which of Danerys Targaryen's three Dragons are the largest?",
@@ -440,7 +440,7 @@
         "answer": "The Rains of Castamere "
     },
     {
-        "question": "Which of the following is now a deadly poison?",
+        "question": "Which of the following is not a deadly poison?",
         "choices": [
             "Tears of lys",
             "Wolfsbane",
@@ -658,16 +658,6 @@
             "Because Jon is a deserter"
         ],
         "answer": "Because of Jon Starks Blood"
-    },
-    {
-        "question": "What is the name of Arya Starks Sword?",
-        "choices": [
-            "Nymeria",
-            "Needle",
-            "Lion's Bane",
-            "Prick"
-        ],
-        "answer": "Needle"
     },
     {
         "question": "After Renly Baratheon dies, who do most of this bannermen submit to?",
