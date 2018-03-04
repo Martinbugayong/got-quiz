@@ -2,6 +2,14 @@
     display: flex;
     justify-content: center;
     height: 600px;
-    align-items: center;
     flex-direction: column;
+}
+
+ul {
+    padding: 0;
+}
+
+.alert {
+    font-size: 40px;
+    color: red;
 }

@@ -42,8 +42,6 @@ class App extends Component {
       this.setState({
         currentQ: this.state.currentQ +1
       })
-    } else {
-      alert('Rewatch the Show, you pleb!')
     }
   }
 
