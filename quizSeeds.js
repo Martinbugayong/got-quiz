@@ -129,7 +129,7 @@ Question.remove({})
             "question": "Who saves Sansa Stark during the Riot of Kings Landing?", 
             "choices": [
                 "The Hound",
-                "Tyrion lammister",
+                "Tyrion lannister",
                 "Joffrey Baratheon",
                 "Perer baelish",
             ],
