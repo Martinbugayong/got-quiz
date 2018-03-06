@@ -1,7 +1,7 @@
 # Valar-Dohaeris 
 
 ## About Valar-Dohaeris
-* **Valar Doeharis** means "All Men must Serve" this is a response to **Valar Morghulis** which means "All Men must Die". This is a Game of Thrones quiz web app. Based on these questions you will find out if you are ready for the next season of Game of Thrones. 
+* **Valar Doeharis** means "All Men must Serve" this is a response to **Valar Morghulis** which means "All Men must Die". This is a Game of Thrones quiz web app. Based on these questions you will find out if you are ready for the final season of Game of Thrones. 
 
 
 ## Technologies Used :
