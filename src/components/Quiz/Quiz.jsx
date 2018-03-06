@@ -29,7 +29,7 @@ class Quiz extends Component {
 
     render() {
         const q = this.props.questions[this.props.currentQ];
-        if (this.props.questions.length === 0) return <h1>No Questions Yet</h1>;
+        if (this.props.questions.length === 0) return <h1>...Loading questions...</h1>;
         return (
             <div className="quiz">
                 {
