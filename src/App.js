@@ -17,7 +17,7 @@ class App extends Component {
       questions: [],
       currentQ: 0,
       correct: 0,
-      maxQuestions: 2
+      maxQuestions: 15
     }
   }
 
