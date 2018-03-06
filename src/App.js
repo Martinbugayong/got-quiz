@@ -17,7 +17,7 @@ class App extends Component {
       questions: [],
       currentQ: 0
     }
-    this.maxQuestions = 1;
+    this.maxQuestions = 14;
   }
 
   
