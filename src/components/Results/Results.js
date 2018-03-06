@@ -11,7 +11,6 @@ class Results extends Component {
     }
 
     render () {
-        const q = this.props.currentQ;
         return (
             <div className="results">
                 <h1>Results Page</h1>
