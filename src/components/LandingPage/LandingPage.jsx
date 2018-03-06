@@ -7,7 +7,7 @@ const landingPage = () => {
             <h1>Valar Morghulis</h1>
             <p>"This Quiz is Dark and full of spoilers"</p>
             <div>
-                <a href="/login">Login to play</a>
+                <a href="/quiz">Play</a>
             </div>
         </div>
     )
