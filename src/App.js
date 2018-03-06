@@ -7,16 +7,17 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import Quiz from './components/Quiz/Quiz';
 import LandingPage from './components/LandingPage/LandingPage';
-import questions from './questions'
+import Results from './components/Results/Results';
 
 class App extends Component { 
   constructor() {
     super();
     this.state = {
       user: null,
-      questions: this.shuffle(questions),
+      questions: [],
       currentQ: 0
     }
+    this.maxQuestions = 1;
   }
 
   
@@ -39,9 +40,13 @@ class App extends Component {
   
   onAnswer = (correct) => {
     if (correct) {
-      this.setState({
-        currentQ: this.state.currentQ +1
-      })
+      if (this.state.currentQ === this.maxQuestions) {
+        this.props.history.push('/results');
+      } else {
+        this.setState({
+          currentQ: this.state.currentQ +1
+        });
+      }
     }
   }
 
@@ -58,8 +63,13 @@ class App extends Component {
   }
   /*---------- Lifecycle Methods ----------*/
   componentDidMount() {
+    fetch('/api/questions')
+    .then(res => res.json())
+    .then(questions => this.setState({questions: this.shuffle(questions)}))
+    .catch(err => console.log(err))
     let user = userService.getUser();
     this.setState({user});
+
   }
   
   render() {
@@ -89,6 +99,12 @@ class App extends Component {
               user={this.state.user}
               handleLogout={this.handleLogout}
             />
+            :
+            <Redirect to="/login" />
+          } />
+          <Route exact path='/results' render={(props) => 
+            userService.getUser() ?
+            <Results />
             :
             <Redirect to="/login" />
           } />

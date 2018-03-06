@@ -11,7 +11,7 @@ class Quiz extends Component {
     }
 
     _onAnswer = (correct) => {
-        let message = correct ? 'You right!' : 'You suck!';
+        let message = correct ? 'You right!' : 'You wrong!';
         this.setState({
             showMessage: true,
             message
@@ -19,12 +19,13 @@ class Quiz extends Component {
             setTimeout(() => {
                 this.props.onAnswer(correct)
                 this.setState({ showMessage: false })
-            }, 2000)
+            }, 1250)
         })
     }
 
     render() {
         const q = this.props.questions[this.props.currentQ];
+        if (this.props.questions.length === 0) return <h1>No Questions Yet</h1>;
         return (
             <div className="quiz">
                 {

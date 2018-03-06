@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(require('./config/auth'));
 
 // Put API routes here, before the "catch all" route
-app.use('/api', require('./routes/api/api'));
+app.use('/api', require('./routes/api/questionsAPI'));
 app.use('/api/users', require('./routes/api/users'));
 // app.use('/api/topscores', require('./routes/api/topscores'));
 
