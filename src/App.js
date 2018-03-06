@@ -2,51 +2,57 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import userService from './utils/userService';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import SignUpForm from './components/SignUpForm/SignUpForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import Quiz from './components/Quiz/Quiz';
 import LandingPage from './components/LandingPage/LandingPage';
 import Results from './components/Results/Results';
 
-class App extends Component { 
+class App extends Component {
   constructor() {
     super();
     this.state = {
       user: null,
       questions: [],
-      currentQ: 0
+      currentQ: 0,
+      correct: 0,
+      maxQuestions: 2
     }
-    this.maxQuestions = 14;
   }
 
-  
+
   handleLogout = () => {
     userService.logout();
-    this.setState({user: null});
+    this.setState({ user: null });
   }
-  
+
   handleSignup = () => {
     this.setState({
       user: userService.getUser()
     });
   }
-  
+
   handleLogin = () => {
     this.setState({
       user: userService.getUser()
     });
   }
-  
+
+
+
   onAnswer = (correct) => {
+    this.setState({
+      currentQ: this.state.currentQ + 1
+    })
     if (correct) {
-      if (this.state.currentQ === this.maxQuestions) {
-        this.props.history.push('/results');
-      } else {
-        this.setState({
-          currentQ: this.state.currentQ +1
-        });
-      }
+      console.log("check this out")
+      this.setState({
+        correct: correct + 1
+      })
+    }
+    if (this.state.currentQ === this.state.maxQuestions) {
+      this.props.history.push('/results');
     }
   }
 
@@ -64,52 +70,56 @@ class App extends Component {
   /*---------- Lifecycle Methods ----------*/
   componentDidMount() {
     fetch('/api/questions')
-    .then(res => res.json())
-    .then(questions => this.setState({questions: this.shuffle(questions)}))
-    .catch(err => console.log(err))
+      .then(res => res.json())
+      .then(questions => this.setState({ questions: this.shuffle(questions) }))
+      .catch(err => console.log(err))
     let user = userService.getUser();
-    this.setState({user});
-
+    this.setState({ user });
   }
-  
+
   render() {
     return (
       <div className="App">
         <NavBar handleLogout={this.handleLogout} user={this.state.user} />
         <Switch>
-          <Route exact path='/signup' render={(props) => 
-            <SignUpForm 
+          <Route exact path='/signup' render={(props) =>
+            <SignUpForm
               {...props}
               handleSignup={this.handleSignup}
             />
           } />
-          <Route exact path='/login' render={(props) => 
-            <LoginForm 
+          <Route exact path='/login' render={(props) =>
+            <LoginForm
               {...props}
               handleLogin={this.handleLogin}
             />
           } />
-          <Route exact path='/quiz' render={(props) => 
+          <Route exact path='/quiz' render={(props) =>
             userService.getUser() ?
-            <Quiz 
-              {...props}
-              onAnswer={this.onAnswer}
-              currentQ={this.state.currentQ}
-              questions={this.state.questions}
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-            />
-            :
-            <Redirect to="/login" />
+              <Quiz
+                {...props}
+                onAnswer={this.onAnswer}
+                currentQ={this.state.currentQ}
+                maxQuestions={this.state.maxQuestions}
+                questions={this.state.questions}
+                user={this.state.user}
+                handleLogout={this.handleLogout}
+              />
+              :
+              <Redirect to="/login" />
           } />
-          <Route exact path='/results' render={(props) => 
+          <Route exact path='/results' render={(props) =>
             userService.getUser() ?
-            <Results />
-            :
-            <Redirect to="/login" />
+              <Results
+                {...props}
+                correct={this.state.correct}
+                maxQuestions={this.state.maxQuestions}
+              />
+              :
+              <Redirect to="/login" />
           } />
-          <Route exact path='/' render={(props) => 
-            <LandingPage 
+          <Route exact path='/' render={(props) =>
+            <LandingPage
               {...props}
               user={this.state.user}
               handleLogout={this.handleLogout}

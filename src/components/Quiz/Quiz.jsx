@@ -10,6 +10,11 @@ class Quiz extends Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.currentQ < this.props.maxQuestions)
+        this.setState({ showMessage: false })
+    }
+
     _onAnswer = (correct) => {
         let message = correct ? 'You right!' : 'You wrong!';
         this.setState({
@@ -18,7 +23,6 @@ class Quiz extends Component {
         }, () => {
             setTimeout(() => {
                 this.props.onAnswer(correct)
-                this.setState({ showMessage: false })
             }, 1250)
         })
     }

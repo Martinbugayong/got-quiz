@@ -666,16 +666,6 @@ Question.remove({})
             "answer": "Because of Jon Starks Blood"
         },
         {
-            "question": "What is the name of Arya Starks Sword?", 
-            "choices": [
-                "Nymeria",
-                "Needle",
-                "Lion's Bane",
-                "Prick"
-            ],
-            "answer": "Needle"
-        },
-        {
             "question": "After Renly Baratheon dies, who do most of this bannermen submit to?", 
             "choices": [
                 "Robert Baratheon",

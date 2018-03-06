@@ -15,7 +15,9 @@ class Results extends Component {
         return (
             <div className="results">
                 <h1>Results Page</h1>
-                <h4>Try again?</h4>
+                <h1>{this.props.correct}/{this.props.maxQuestions}</h1>
+                <a href="/quiz">Try again?</a>
+
             </div>
         )
     }
