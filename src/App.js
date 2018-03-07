@@ -21,14 +21,11 @@ class App extends Component {
       currentQ: this.state.currentQ + 1
     })
     if (correct) {
-      console.log("check this out")
       this.setState({
         correct: this.state.correct + 1
       }, () => {
-        console.log(this.state.correct)
       })
     } else {
-      console.log(this.state.correct)
     }
     if (this.state.currentQ === this.state.maxQuestions) {
       this.props.history.push('/results');
