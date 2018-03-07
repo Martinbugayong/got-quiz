@@ -13,8 +13,7 @@ class Results extends Component {
     render () {
         return (
             <div className="results">
-                <h1>Results Page</h1>
-                <h1>{this.props.correct}/{this.props.maxQuestions}</h1>
+                <h1>You got {this.props.correct}/{this.props.maxQuestions}</h1>
                 <a href="/quiz">Try again?</a>
 
             </div>
